@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Packages</title>
+    <link rel="stylesheet" href="../styles2.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h4>
+                <a href="index.html">Visit Parks</a>
+            </h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="tour_packages.html">Tour Packages</a></li>
+        </ul>
+    </nav>
+
+    <section class="booking-section">
+        <h1 class="section-heading">Choose Your Tour Package</h1>
+        <div class="tour-options">
+
+            <div class="package-card">
+                <h2>By Car</h2>
+                <p>Enjoy the convenience of a private car for the day. Our experienced drivers will take you to the park and back, and you can enjoy the park at your own pace.</p>
+                <p class="car-price"><strong>Price:</strong> $100</p>
+                <div class="form-group">
+                    <label>Number of persons:</label>
+                    <input type="number" name="quantity" min="1" max="10" value="1" class="car-quantity">
+                </div>
+                <div class="form-group">
+                    <label for="car-date">Select a Date:</label>
+                    <input type="date" id="car-date" name="calendar">
+                </div>
+                <button class="btn-primary-car-booking">Book a Car</button>
+            </div>
+
+            <div class="package-card">
+                <h2>By Bus</h2>
+                <p>Join a group of other visitors on a bus tour to the park. Our experienced guides will show you the best spots in the park and make sure you have a great time.</p>
+                <p class="price"><strong>Price:</strong> $3.70</p>
+                <div class="form-group">
+                    <label>Number of persons:</label>
+                    <input type="number" name="quantity" min="1" max="10" value="1" class="bus-quantity">
+                </div>
+                <div class="form-group">
+                    <label for="bus-date">Select a Date:</label>
+                    <input type="date" id="bus-date" name="calendar">
+                </div>
+                <button class="btn-primary-bus-booking">Book a Bus Ticket</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Visit Parks &copy; 2020</p>
+    </footer>
+</body>
+<script src="../script.js"></script>
+</html>

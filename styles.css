@@ -1,0 +1,242 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('./image.png'); /* Default background image */
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensures the image covers the full screen */
+    background-position: center; /* Keeps the background centered */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0.3, 0.3, 0.3, 0.8);
+    animation: slideDown 1s ease-in-out;
+}
+
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.logo a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: rgb(255, 222, 173);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bfff;
+    transform: scale(1.05);
+}
+
+/* Section styling */
+.section1, .section2, .section3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container styling */
+.container1, .container2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 20px;
+}
+
+/* Content (text) styling */
+.content1, .content2 {
+    flex: 1;
+    max-width: 500px;
+    text-align: left;
+}
+
+/* Title styling for each section */
+.content1 h1, .content2 h1 {
+    font-size: 2.5rem;
+    color: #FEFEFA;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn2 1s forwards;
+}
+
+/* Image styling */
+.content1-image, .content2-image {
+    flex: 1;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slideIn 1s forwards;
+}
+
+.content1-image img, .content2-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.content1-image img:hover, .content2-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Footer styling */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0.3, 0.3, 0.3, 0.8);
+    color: #FEFEFA;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideIn2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Stack sections vertically on smaller screens */
+    .container1, .container2{ 
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px;
+    }
+
+    /* Adjust content text alignment */
+    .content1, .content2{
+        text-align: center;
+        max-width: 90%;
+    }
+
+    /* Adjust images to be smaller */
+    .content1-image img, .content2-image img {
+        max-width: 80%;
+        height: 200px;
+        margin-top: 15px;
+    }
+
+    /* Adjust title font size and spacing for smaller screens */
+    .content1 h1, .content2 h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    /* Navbar links adjustment */
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    /* Logo size adjustment */
+    .logo {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjust for very small screens */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .content1 h1, .content2 h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .container1, .container2 {
+        gap: 10px;
+    }
+}
